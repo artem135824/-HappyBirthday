@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С днём рождения, Диана! 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --pink: #f7c6d0;
+  --rose: #c45b79;
+  --cream: #fff8f4;
+  --gold: #c49b55;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #704653;
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 15%, #f9dce5 0, transparent 40%),
+    radial-gradient(ellipse at 85% 80%, #f6d4c6 0, transparent 40%),
+    linear-gradient(135deg, #fff9f4, #fceaf0);
+}
+
+.hero::before {
+  content: "✧";
+  position: absolute;
+  top: 9%;
+  left: 12%;
+  font-size: 80px;
+  color: #d6b36d;
+  opacity: .65;
+  animation: twinkle 3s infinite alternate;
+}
+
+.hero::after {
+  content: "♡";
+  position: absolute;
+  right: 12%;
+  bottom: 10%;
+  font-size: 100px;
+  color: #d98ca5;
+  opacity: .45;
+  animation: float 4s infinite ease-in-out;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  animation: appear 1.5s ease both;
+}
+
+.eyebrow {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.crown {
+  font-size: 45px;
+  margin: 25px 0 0;
+  animation: float 3s infinite ease-in-out;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(75px, 15vw, 145px);
+  line-height: 1.15;
+  font-weight: 400;
+  color: var(--rose);
+  margin: 10px 0 0;
+  text-shadow: 0 5px 25px #e9b1c34d;
+}
+
+.age {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 0 25px;
+  color: var(--gold);
+}
+
+.age span {
+  font-size: clamp(90px, 17vw, 150px);
+  line-height: 1;
+  font-weight: 300;
+}
+
+.age small {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 2;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 300;
+  max-width: 470px;
+  margin: 0 auto 30px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.main-btn {
+  padding: 16px 29px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #d9819d, #b94e72);
+  color: white;
+  box-shadow: 0 10px 30px #c45b793c;
+  transition: .3s;
+}
+
+.main-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px #c45b7960;
+}
+
+.scroll {
+  margin-top: 45px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  opacity: .65;
+}
+
+.section {
+  padding: 85px 22px;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  color: var(--rose);
+  font-size: clamp(43px, 8vw, 66px);
+  margin: 0 0 18px;
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 2;
+  max-width: 520px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 920px;
+  margin: 48px auto 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid #f2dce1;
+  border-radius: 24px;
+  padding: 30px 17px;
+  box-shadow: 0 12px 40px #8b45500b;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px #8b455018;
+}
+
+.card .emoji { font-size: 35px; }
+
+.card h3 {
+  font-size: 15px;
+  margin: 17px 0 10px;
+}
+
+.card p {
+  font-size: 12px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin: 0;
+}
+
+.letter-section {
+  background: linear-gradient(135deg, #f9e3e9, #fff2e9);
+}
+
+.letter {
+  max-width: 650px;
+  margin: 35px auto 0;
+  padding: clamp(25px, 6vw, 55px);
+  background: #fffaf7d9;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 15px 50px #a75a6712;
+  line-height: 2.1;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.letter .signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 37px;
+  color: var(--rose);
+  text-align: right;
+  margin-top: 25px;
+}
+
+.wish {
+  padding: 85px 20px 100px;
+  text-align: center;
+  background: #fffaf7;
+}
+
+.wish p {
+  font-size: 13px;
+  line-height: 2;
+}
+
+#surprise {
+  display: none;
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 30px 25px;
+  background: white;
+  border: 1px solid #efd4dc;
+  border-radius: 24px;
+  line-height: 2;
+  animation: appear .7s ease;
+}
+
+#surprise h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--rose);
+  margin: 0 0 12px;
+}
+
+footer {
+  padding: 28px 15px;
+  background: #f8e5e9;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.heart {
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+  animation: rise 3s ease-out forwards;
+}
+
+@keyframes rise {
+  from { transform: translateY(0) rotate(0); opacity: 1; }
+  to { transform: translateY(-110vh) rotate(45deg); opacity: 0; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes twinkle {
+  from { transform: scale(.8) rotate(-10deg); opacity: .35; }
+  to { transform: scale(1.1) rotate(10deg); opacity: .9; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+  .cards { grid-template-columns: 1fr; max-width: 380px; }
+  .card { padding: 25px; }
+  .hero::before { left: 5%; font-size: 50px; }
+  .hero::after { right: 4%; font-size: 65px; }
+  .intro { font-size: 13px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="content">
+    <div class="eyebrow">A special day for someone special</div>
+    <div class="crown">👑</div>
+    <h1>Диана</h1>
+    <div class="age">
+      <span>19</span>
+      <small>лет<br>счастья ♡</small>
+    </div>
+    <p class="intro">
+      Сегодня весь мир словно стал чуточку прекраснее,
+      ведь свой день рождения отмечает самая замечательная сестра!
+    </p>
+    <button class="main-btn" onclick="openSurprise()">
+      Твоё поздравление ♡
+    </button>
+    <div class="scroll">ЛИСТАЙ НИЖЕ · ↓</div>
+  </div>
+</header>
+
+<section class="section">
+  <h2>19 — время сиять</h2>
+  <p class="subtitle">
+    Пусть твоя жизнь будет похожа на самую красивую историю,
+    в которой каждая новая глава приносит счастье, любовь и чудеса.
+  </p>
+
+  <div class="cards">
+    <article class="card">
+      <div class="emoji">🌷</div>
+      <h3>Любви</h3>
+      <p>Искренней, нежной и настоящей. Чтобы сердце всегда было наполнено теплом.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">✨</div>
+      <h3>Мечты</h3>
+      <p>Пусть даже самые смелые желания становятся реальностью одно за другим.</p>
+    </article>
+    <article class="card">
+      <div class="emoji">🦋</div>
+      <h3>Счастья</h3>
+      <p>Маленького каждый день и огромного — в самые важные моменты жизни.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section letter-section">
+  <h2>Несколько слов от сердца</h2>
+  <p class="subtitle">Для моей любимой сестры 💌</p>
+
+  <div class="letter">
+    Диана, с днём рождения тебя! 💗
+
+    <br><br>
+    Поздравляю тебя с твоим прекрасным 19-летием!
+    Желаю, чтобы ты всегда улыбалась, верила в себя и никогда
+    не позволяла трудностям гасить твой внутренний свет.
+
+    <br><br>
+    Пусть рядом будут люди, с которыми можно смеяться до слёз,
+    делиться секретами и просто быть собой. Пусть каждый день
+    приносит новые возможности, приятные сюрпризы и поводы
+    гордиться собой.
+
+    <br><br>
+    Желаю тебе здоровья, душевного спокойствия, исполнения
+    желаний и огромной любви. Оставайся такой же прекрасной,
+    яркой и неповторимой. Пусть твои 19 станут началом
+    удивительного времени, полного красивых воспоминаний!
+
+    <div class="signature">С любовью, твой брат ♡</div>
+  </div>
+</section>
+
+<section class="wish">
+  <h2>И это ещё не всё...</h2>
+  <p>У тебя есть маленький сюрприз. Нажми на кнопку 💝</p>
+
+  <button class="main-btn" onclick="openSurprise()">
+    Открыть сюрприз ✨
+  </button>
+
+  <div id="surprise">
+    <h3>Диана, ты — чудо! 💗</h3>
+    <p>
+      Запомни: тебе не нужно быть идеальной, чтобы быть невероятной.
+      Ты достойна самого прекрасного, что может подарить жизнь.
+      <br><br>
+      Пусть твои глаза сияют от счастья, душа поёт от радости,
+      а впереди ждут тысячи причин сказать:
+      «Как же прекрасно жить!»
+      <br><br>
+      <strong>С 19-летием, сестрёнка! 🎂🎀</strong>
+    </p>
+  </div>
+</section>
+
+<footer>
+  MADE WITH LOVE FOR DIANA · 19 YEARS OF MAGIC ♡
+</footer>
+
+<script>
+function makeHearts(count = 25) {
+  const symbols = ['♡', '💗', '✨', '💕', '🌸'];
+
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '-30px';
+      heart.style.fontSize = (16 + Math.random() * 24) + 'px';
+      heart.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, i * 60);
+  }
+}
+
+function openSurprise() {
+  const surprise = document.getElementById('surprise');
+  surprise.style.display = 'block';
+  makeHearts(45);
+
+  surprise.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+</script>
+
+</body>
+</html>
